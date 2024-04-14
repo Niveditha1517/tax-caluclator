@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Tax Calculator</h1>
+        <form id="taxForm" class="mx-auto" style="max-width:400px; ">
+            <div class="form-group">
+                
+                <label for="grossIncome" data-toggle="tooltip" data-placement="right" title="Gross annual income is your total salary in a year before any deductions">Enter gross annual income &#10068;</label>
+                
+                <input type="text" class="form-control" id="grossIncome" name="income" placeholder="Enter gross annual income"  required>
+                
+                <span class="error-icon" id="grossIncomeError" data-toggle="tooltip" data-placement="top" title="Please Enter numbers only">&#9888;</span>
+                    
+                
+            </div>
+            <div class="form-group">
+                <label for="extraIncome" data-toggle="tooltip" data-placement="right" title="Extra income is your extra money which falls under the head of other sources">Enter extra income &#10068;</label>
+                <input type="text" class="form-control" id="extraIncome" name="extraIncome" placeholder="Enter extra income from other sources" required>
+                <span class="error-icon" id="extraIncomeError" data-toggle="tooltip" data-placement="top" title="Please Enter numbers only">&#9888;</span>
+                
+            </div>    
+        
+            <div class="form-group" >
+                <label for="age" data-toggle="tooltip" data-placement="right" title="select your age group">Enter age group &#10068;</label>
+                <select class="form-control" id="age" name="age" required>
+                    <option value="select_age" disabled selected></option>
+                    <option value='<40' ><40</option>
+                    <option value= '>=40 & <60' >>=40&<60</option>
+                    <option value='>=60' > >=60</option>
+            </select>
+                <span class="error-icon" id="ageError" data-toggle="tooltip" data-placement="top" title="Input feild is mandatory">&#9888;</span></div>
+            
+            <div class="form-group">
+                <label for="deductions" data-toggle="tooltip" data-placement="right" title="Tax deduction is the total amount an individual can claim to reduce their tax liability">Enter total applicable deductions &#10068;</label>
+                <input type="text" class="form-control" id="deductions" name="deductions" placeholder="Add total applicable deductions" required>
+                <span class="error-icon" id="deductionsError" data-toggle="tooltip" data-placement="top" title=" Please Enter numbers only">&#9888;</span>
+            </div>
+    
+            <button type="submit" class="btn btn-primary" style="height:40px;width:400px">Submit</button>
+        </form>
+
+        <div id="myModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tax Calculation Result</h5>
+                        <button type="button" class="close"  aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="result"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+
+    .error-icon {
+        color:red;
+        position: relative;
+        top: 50%;
+        bottom: 30px;
+        right: 5px;
+        left:350px;
+        width: 180px;
+        transform: translateY(-50%);
+        
+        display: none; 
+    }
+    
+    #ageError{
+            display: none;
+            color:black;
+            position: relative;
+            top: 40%;
+            bottom: 35px;
+            right: 3px;
+            left:370px;
+            width: 180px;
+            transform: translateY(-50%);
+        }
+    #ageError:hover{
+        color: black;
+        display: inline-block;
+        opacity: 0.3 sec;
+        
+    }
+    
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src="bootjs.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+</html>
