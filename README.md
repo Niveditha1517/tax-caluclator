@@ -6,12 +6,14 @@ Input fields for gross annual income, extra income, deductions, and age group.
 Error handling for invalid inputs and missing fields.
 Calculation of tax amount based on user inputs.
 Modal popup displaying the calculated tax amount.
+
 Usage
 Clone the repository to your local machine.
 Open the index.html file in your web browser.
 Fill in the input fields with your income, deductions, and age group.
 Click on the "Submit" button to calculate your tax amount.
 View the calculated tax amount in the modal popup.
+
 Technologies Used
 HTML
 CSS
